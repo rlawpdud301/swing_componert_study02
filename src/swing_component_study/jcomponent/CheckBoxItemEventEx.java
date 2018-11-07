@@ -21,21 +21,7 @@ public class CheckBoxItemEventEx extends JFrame implements ItemListener {
 	private int sum = 0;
 	private JLabel lblNewLabel;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CheckBoxItemEventEx frame = new CheckBoxItemEventEx();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
