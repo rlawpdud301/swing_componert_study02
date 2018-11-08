@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -34,6 +35,12 @@ public class JComponerntMain extends JFrame implements ActionListener {
 	private JListAndJComboEx JListAndJComboExFrame;
 	private JTextFieldOtherEx JTextFieldOtherExFrame;
 	private RadioButtonItemEventEx RadioButtonItemEventExFrame;
+	private JButton bnt8;
+	private JButton btn9;
+	private JOptionPaneExFrame JOptionPaneExFrame;
+	private JSliderChangeEventEx JSliderChangeEventExFrame;
+	private JButton btn12;
+	private TabbedPaneEx TabbedPaneExFrame;
 	
 
 	/**
@@ -97,9 +104,30 @@ public class JComponerntMain extends JFrame implements ActionListener {
 		btnNewButton_2 = new JButton("RadioButtonItemEventEx");
 		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
+		
+		bnt8 = new JButton("New button");
+		bnt8.addActionListener(this);
+		contentPane.add(bnt8);
+		
+		btn9 = new JButton("jOp");
+		btn9.addActionListener(this);
+		contentPane.add(btn9);
+		
+		btn12 = new JButton("TabbedPaneEx");
+		btn12.addActionListener(this);
+		contentPane.add(btn12);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn12) {
+			do_btn12_actionPerformed(e);
+		}
+		if (e.getSource() == btn9) {
+			do_btn9_actionPerformed(e);
+		}
+		if (e.getSource() == bnt8) {
+			do_bnt8_actionPerformed(e);
+		}
 		if (e.getSource() == btnNewButton_2) {
 			do_btnNewButton_2_actionPerformed(e);
 		}
@@ -171,5 +199,20 @@ public class JComponerntMain extends JFrame implements ActionListener {
 		RadioButtonItemEventExFrame = new RadioButtonItemEventEx();
 		RadioButtonItemEventExFrame.setVisible(true);
 		RadioButtonItemEventExFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+	protected void do_bnt8_actionPerformed(ActionEvent e) {
+		JSliderChangeEventExFrame = new JSliderChangeEventEx();
+		JSliderChangeEventExFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		JSliderChangeEventExFrame.setVisible(true);
+	}
+	protected void do_btn9_actionPerformed(ActionEvent e) {
+		JOptionPaneExFrame = new JOptionPaneExFrame();
+		JOptionPaneExFrame.setVisible(true);
+		JOptionPaneExFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+	protected void do_btn12_actionPerformed(ActionEvent e) {
+		TabbedPaneExFrame = new TabbedPaneEx();
+		TabbedPaneExFrame.setVisible(true);
+		TabbedPaneExFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 }
